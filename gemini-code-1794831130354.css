@@ -1,0 +1,66 @@
+#grid-viewport {
+  user-select: none;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+}
+
+#grid-content {
+  pointer-events: none;
+}
+
+.sheet-cell, .sheet-header-col, .sheet-header-row, .sheet-corner {
+  position: absolute;
+  box-sizing: border-box;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.sheet-corner {
+  background-color: #e9ecef;
+  z-index: 30;
+}
+
+.sheet-header-col, .sheet-header-row {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  justify-content: center;
+  z-index: 20;
+}
+
+.sheet-header-col.highlight, .sheet-header-row.highlight {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+.sheet-cell {
+  background-color: #ffffff;
+  cursor: cell;
+}
+
+.sheet-cell.selected {
+  outline: 2px solid #0d6efd;
+  outline-offset: -2px;
+  z-index: 10;
+}
+
+.sheet-cell.error {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.cell-editor {
+  position: absolute;
+  z-index: 25;
+  border: 2px solid #0d6efd;
+  padding: 0 5px;
+  font-family: monospace;
+  font-size: 0.875rem;
+  outline: none;
+}
